@@ -39,7 +39,7 @@ const data = fetch('../dummy.json')
         console.log(data[i]);
         var hi = document.querySelector('.dynamic_cards').innerHTML;
       dynamic.innerHTML = hi + `<tr><td class="bs-checkbox">
-      <input type="checkbox" class ="checkbox" value = '${i}'/>
+      <input type="checkbox" class ="checkbox" value = '${data[i].id-1}'/>
     </td>
     
     <td>
@@ -58,7 +58,7 @@ const data = fetch('../dummy.json')
               <p class="card-text">${data[i].school}</p>
               <h5 class="card-title">${data[i].degree}</h5>
               <p class="card-text">
-                <button class="details" value="${i}" onclick="window.location.href = '../course_details/coursedetailspage.html';">View details</button>
+                <button class="details" value="${data[i].id-1}" onclick="window.location.href = '../course_details/coursedetailspage.html';">View details</button>
               </p>
             </div>
           </div>
@@ -70,7 +70,7 @@ const data = fetch('../dummy.json')
       else if (tempInterest == null){
         var hi = document.querySelector('.dynamic_cards').innerHTML;
       dynamic.innerHTML = hi + `<tr><td class="bs-checkbox">
-      <input type="checkbox" class ="checkbox" value = '${i}'/>
+      <input type="checkbox" class ="checkbox" value = '${data[i].id-1}'/>
     </td>
     
     <td>
@@ -89,7 +89,7 @@ const data = fetch('../dummy.json')
               <p class="card-text">${data[i].school}</p>
               <h5 class="card-title">${data[i].degree}</h5>
               <p class="card-text">
-                <button class="details" value="${i}" onclick="window.location.href = '../course_details/coursedetailspage.html';">View details</button>
+                <button class="details" value="${data[i].id-1}" onclick="window.location.href = '../course_details/coursedetailspage.html';">View details</button>
               </p>
             </div>
           </div>
