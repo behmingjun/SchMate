@@ -32,7 +32,11 @@ const data = fetch('../dummy.json')
     //if (data.length>5){len = 5};
     len = data.length;
     for (var i = 0; i < len; i++) { //note that the length here is 5, can be changed to length of obj
-      if (data[i].interest_card == tempInterest){ 
+      let x=data[i].interest_card.split(',');
+      // console.log(x);
+      for (var j=0; j<x.length; j++){
+      if (x[j] == tempInterest){ 
+        console.log(data[i]);
         var hi = document.querySelector('.dynamic_cards').innerHTML;
       dynamic.innerHTML = hi + `<tr><td class="bs-checkbox">
       <input type="checkbox" class ="checkbox" value = '${i}'/>
@@ -94,7 +98,7 @@ const data = fetch('../dummy.json')
     </td></tr>`;
       }
       fullCourseList.push(data[i]);
-    }
+    }}
     //debugPrintTesting(interestedCourseList);
     //debugPrint(data);
 
