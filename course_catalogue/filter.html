@@ -86,6 +86,7 @@
         8590: "rank_points_alevels",
         7585: "rank_points_alevels",
         6575: "rank_points_alevels",
+        0065: "rank_points_alevels",
         // need to add for other filters as well
       };
       let courseProperty = coursePropertyDict[filterOption];
@@ -240,10 +241,13 @@
                 >=85
               </button>
               <button value="7585" class="filterOption dropdown-item" href="#">
-                75 <= RP <= 85
+                75 - 85
               </button>
               <button value="6575" class="filterOption dropdown-item" href="#">
-                65 <= RP <= 75
+                65 - 75
+              </button>
+              <button value="0065" class="filterOption dropdown-item" href="#">
+                <= 65
               </button>
             </span>
           </span>
