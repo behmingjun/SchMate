@@ -313,9 +313,9 @@
     <script>
       // find class and log value on local storage
       // in this case we finding dropdown-item which is the class for the filter buttons
-      let filterSelector = document.querySelectorAll(".filterOption");
+      let selector = document.querySelectorAll(".filterOption");
 
-      filterSelector.forEach((btn) => {
+      selector.forEach((btn) => {
         btn.addEventListener("click", (event) => {
           let value = event.target.value; // value of button that was clicked
           localStorage.setItem("filterOption", value);
