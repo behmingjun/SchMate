@@ -120,6 +120,16 @@
             filteredCourses.push(interestedCoursesList[i]);
           }
         }
+      } else if (courseProperty === "poly_gpa") {
+        lowerValue = parseFloat(filterOption.slice(0, 3));
+        upperValue = parseFloat(filterOption.slice(3));
+        for (let i = 0; i < interestedCoursesList.length; i++) {
+          let courseRankPoint = interestedCoursesList[i][courseProperty];
+          if (courseRankPoint >= lowerValue && courseRankPoint < upperValue) {
+            // console.log(interestedCourses[i]);
+            filteredCourses.push(interestedCoursesList[i]);
+          }
+        }
       }
       console.log(filteredCourses);
     </script>
@@ -246,8 +256,8 @@
               Rank Point (A Levels)
             </button>
             <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <button value="8590" class="filterOption dropdown-item" href="#">
-                >=85
+              <button value="8591" class="filterOption dropdown-item" href="#">
+                >= 85
               </button>
               <button value="7585" class="filterOption dropdown-item" href="#">
                 75 - 85
