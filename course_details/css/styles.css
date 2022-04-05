@@ -1,0 +1,151 @@
+* {
+	font-family: 'Nunito', sans-serif;
+}
+
+/* Nav-bar*/
+
+.navbar a {
+	color: #333;
+}
+
+.nav-item {
+	width: 150px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.nav-item:hover, .nav-item:focus {
+	display: block;
+	font-size: 15px;
+	background-color: #444;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.nav-link:hover, .nav-link:focus {
+	color: #f3f3f3;
+}
+
+/* Main content */
+
+body {
+	background-color: #fafafa;
+}
+
+.row .col-lg-11 {
+	align-self: center;
+	width: 100%;
+	margin: auto;
+	padding: 0px;
+}
+
+.row #image-contain {
+	height: 500px;
+}
+
+#image-contain {
+	background-color: #f3f3f3;
+}
+
+.img-fluid {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+#uni-logo {
+	width: 13%;
+	position: relative;
+	bottom: 15%;
+	left: 3%;
+	float: left;
+	margin-bottom: -6%;
+}
+
+#course-name {
+	clear: both;
+	font-weight: bold;
+	padding-left: 3%;
+}
+
+h5 {
+	padding-left: 3%;
+	color: #666;
+}
+
+h2, h3, h6, strong, em, #interest-card {
+	padding-left: 3%;
+	padding-top: 2%;
+	text-align: justify;
+}
+
+h3 {
+	font-size: 25px;
+}
+
+#card-header-btn {
+	padding-top: 5%;
+}
+
+h4 {
+	padding: 0%;
+	text-align: center;
+}
+
+.btn:hover {
+	color: #1A1A1A;
+	text-decoration: none;
+}
+
+.btn:focus {
+	text-decoration: none;
+}
+
+.table-desc {
+	padding-left: 3%;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	margin-bottom: 0px;
+	text-align: justify;
+	font-style: italic;
+	color: #666;
+}
+
+/* View more courses button */
+
+#back-btn {
+	font-size: 16px;
+	padding: 1.2% 3% 1.2% 3%;
+}
+
+.btn-primary {
+    color: #f3f3f3;
+    background-color: #1A1A1A;
+    border: none;
+    margin: 2% auto;
+	text-align: center;
+	align-content: center;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+	color: #f3f3f3;
+	background-color: #666 !important;
+	border-color: #4d4d4d;
+	box-shadow: none !important;
+	border: none;
+}
+
+.btn-link {
+	color: #4d4d4d;
+}
+
+.fa-angle-left {
+	padding-right: 10px;
+}
+
+/* Footer text */
+
+.footer-text {
+	padding: 0%;
+	text-align: center;
+}

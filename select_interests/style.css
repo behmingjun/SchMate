@@ -1,0 +1,116 @@
+* {
+	font-family: 'Nunito', sans-serif;
+}
+
+.navbar a {
+	color: #333;
+}
+
+.nav-item {
+	width: 150px;
+	text-align: center;
+}
+
+.nav-item:hover, .nav-item:focus {
+	display: block;
+	font-size: 15px;
+	background-color: #444;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.nav-link:hover, .nav-link:focus {
+	color: #f3f3f3;
+}
+
+h1 {
+	margin-left: 90px;
+}
+
+.col-lg-4 {
+	padding-right: 0%;
+	padding-left: 0%;
+}
+
+a.btn {
+	background-color: #f3f3f3;
+	font-size: 50px;
+	color: #555;
+
+}
+
+a.btn {
+	width: 95%;
+	border: none;
+	align-items: center;
+	text-align: center;
+	border-radius: 30px;
+	padding: 40px 20px;
+}
+
+.form-check-inline {
+	width: 100%;
+	padding: 1% 0px;
+}
+
+a.btn:focus, a.btn:hover {
+	background-color: #555;
+	color: #f3f3f3;
+	text-decoration: none;
+	outline: none;
+	box-shadow: none;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-secondary.dropdown-toggle {
+	outline: none;
+	box-shadow: none;
+	background-color: #555;
+	border: none;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+footer > p {
+	text-align: center;
+	margin-top: 2%;
+	margin-bottom: 0%;
+	background-color: #f3f3f3;
+	padding: 1% 0%;
+}
+
+/* Implement the following if multiselect is enabled, for show course btn */
+
+/* .btn-labeled:hover {
+	background-color: #555;
+	text-decoration: none;
+	color: #f3f3f3;
+	outline: none;
+	box-shadow: none;
+	;
+}
+
+.btn-primary {
+	background-color: #1A1A1A;
+	border: none;
+	color: #f3f3f3;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	font-size: 16px;
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+	color: #f3f3f3;
+	background-color: #666 !important;
+	border-color: #4d4d4d;
+	box-shadow: none !important;
+	border: none;
+} */

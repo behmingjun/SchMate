@@ -1,0 +1,120 @@
+* {
+	font-family: 'Nunito', sans-serif;
+}
+
+.bold-blue {
+  font-weight: bold;
+  color: #0277bd;
+}
+
+.smallwords {
+  font-size: 10px;
+}
+
+.center {
+  padding-top: 1%;
+  text-align: center;
+}
+
+header {
+	color: black;
+}
+
+.navbar a {
+	color: #333;
+}
+
+.nav-item {
+	width: 150px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.nav-item:hover, .nav-item:focus {
+	display: block;
+	font-size: 15px;
+	background-color: #444;
+	text-decoration: none;
+	border-radius: 5px;
+}
+
+.nav-link:hover, .nav-link:focus {
+	color: #f3f3f3;
+}
+
+.alert-info {
+  color: #313131;
+  background-color: #f7f7f7;
+  border-color: #f7f7f7;
+}
+
+.btn-primary {
+  background-color: #808080;
+  border-color: #808080;
+}
+
+.btn-primary:hover {
+  background-color: #808080;
+  border-color: #808080;
+}
+
+/*.btn-primary.focus, .btn-primary:focus {
+  background-color: crimson;
+}*/
+
+.btn-primary.dropdown-toggle:focus {
+  background-color: #808080;
+  border-color: #808080;
+}
+
+.btn-secondary {
+  color: #313131;
+  background-color: #eeeeee;
+  border-color: #eeeeee;
+}
+
+.table {
+  margin: auto;
+  width: 75% !important;
+}
+
+/* For compare courses button */
+
+#compare-btn:hover{
+	background-color: #555;
+	text-decoration: none;
+	color: #f3f3f3;
+	outline: none;
+	box-shadow: none;;
+}
+
+#compare-btn, #compare-btn:focus {
+	background-color: #1a1a1a;
+	border: none;
+	color: #f3f3f3;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	font-size: 16px;
+	width: 17%;
+	margin-left: auto;
+	margin-right: auto;
+	pointer-events: none;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+	color: #f3f3f3;
+	background-color: #666 !important;
+	border-color: #4d4d4d;
+	box-shadow: none !important;
+	border: none;
+}
+
+.compare-course {
+	margin: 50px auto;
+}
+
+.fa-angle-right {
+	padding-left: 10px;
+}

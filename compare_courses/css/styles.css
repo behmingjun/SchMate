@@ -1,0 +1,103 @@
+body {
+	font-family: 'Nunito', sans-serif;
+	color: #333333;
+	background-color: #fafafa;
+}
+
+#header-nav {
+	border-radius: 0;
+	border: 0;
+}
+
+.navbar-brand {
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.navbar-brand > h1 {
+	font-size: 15px;
+	margin-bottom: 0px;
+}
+
+.navbar-brand span {
+	color: #f3f3f3;
+}
+
+.navbar-brand a:hover, .navbar-brand a:focus {
+	text-decoration: none;
+}
+
+.navbar-header .container-fluid {
+	background-color: #cacaca;
+	border-radius: 5px;
+}
+
+.navbar a {
+	color: #333;
+}
+
+.nav-item {
+	width: 150px;
+	text-align: center;
+}
+
+.nav-item:hover, .nav-item:focus {
+	display: block;
+	font-size: 15px;
+	background-color: #444;
+	text-decoration: none;
+	border-radius:  5px;
+}
+
+.nav-link:hover, .nav-link:focus {
+	color: #f3f3f3;
+}
+
+.col-lg-6 p, .col-lg-6 h3 {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+#main-content h2, #main-content h1, .col-lg-6 h3 {
+	font-weight: bold;
+}
+
+#main-content p {
+	color: #656565;
+}
+
+.school-info > p {
+	font-size: 12px;
+}
+
+.img-fluid {
+	padding: 10px 0px 0px;
+	border-radius: 20%;
+	max-width: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right:  auto;
+}
+
+#main-content h2 {
+	padding: 10px 0px;
+}
+
+.btn-primary {
+    color: #f3f3f3;
+    background-color: #1A1A1A;
+    border: none;
+    margin: 40px auto 70px;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+	color: #f3f3f3;
+	background-color: #666 !important;
+	border-color: #4d4d4d;
+	box-shadow: none !important;
+	border: none;
+}
+
+.fa-angle-left {
+	padding-right: 10px;
+}

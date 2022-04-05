@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>course_catalogue</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+        <link rel="stylesheet" href="style.css">
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" ></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+		<!--Navigation Bar-->
+        <header>
+            <p class="center">
+                <nav id="header-nav" class="navbar navbar-expand-lg">
+                    <div class="container">
+                        <div class="navbar-header">
+                              <div class="container-fluid">
+                                <a class="navbar-brand">
+                                    <img src="images/logo_with_words.PNG" alt="" width="33" height="33" class="d-inline-block align-text-top">
+                                    <span>SchMate</span>
+                                </a>
+                              </div>
+        
+                               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsable-nav" aria-controls="collapsable-nav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span>More</span>
+                            </button>	
+                           </div>
+        
+                           <div id="collapsable-nav" class="collapse navbar-collapse">
+                               <ul id="nav-list" class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                      <a class="nav-link" href="../select_interests/index.html">Select Interests</a>
+                                </li>
+                                <li class="nav-item">
+                                      <a class="nav-link" href="../course_catalogue/course_catalogue.html">Course Catalogue</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../contact_page/index.html">Contact Team</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </p>
+        </header>
+
+		<!-- Filter and Sorter -->
+        <div>
+            <p class="center">
+                <span class="alert alert-info" role="alert">
+                    <b>Filter:</b>
+                    <span class="dropdown">                
+                        <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            University
+                            </button>
+                            <span id='select1' class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <button id="option1" onclick=f() value="NTU" class="dropdown-item" href="#">Nanyang Technological University</button>
+                                <button id="option2" onclick=f() value="NUS" class="dropdown-item" href="#">National University of Singapore</button>
+                                <button id="option3" onclick=f() value="SMU" class="dropdown-item" href="#">Singapore Management University</button>
+                            </span>
+                    </span>
+                            
+                    <span class="dropdown">                
+                        <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Degree
+                            </button>
+                            <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Bachelor's Degree</a>
+                                <a class="dropdown-item" href="#">Master's Degree</a>
+                                <a class="dropdown-item" href="#">PhD</a>
+                            </span>
+                    </span>
+        
+                    <button type="button" class="btn btn-dark btn-sm">Filter</button>
+                    <button type="button" class="btn btn-secondary btn-sm"><u><b>Clear All</b></u></button>
+                </span>
+
+                <span>&emsp;&emsp;&emsp;</span>
+
+                <span class="alert alert-info" role="alert">
+                    <b>Sort By</b>
+            
+                    <span class="dropdown">                
+                        <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Category
+                            </button>
+                            <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">School Fees</a>
+                                <a class="dropdown-item" href="#">Rank Points (A Levels)</a>
+                                <a class="dropdown-item" href="#">GPA (Polytechnic))</a>
+                            </span>
+                    </span>
+            
+                    <span class="dropdown">                
+                        <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Order
+                            </button>
+                            <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Ascending</a>
+                                <a class="dropdown-item" href="#">Descending</a>
+                            </span>
+                    </span>
+                </span>
+            </p>
+        </div>
+
+		<!--Table of Courses-->
+        <table class="table table-borderless table-hover align-middle">
+            <tr>
+              <td class="bs-checkbox">
+                <input type="checkbox" />
+              </td>
+              <td>
+                <div class="card mb-3" style="max-width: 1000px">
+                  <div class="row g-0">
+                    <div class="col-md-2" style="width: 200px">
+                      <img
+                        src="images/blue-square-image-3.png"
+                        class="img-fluid rounded-start"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card-body">
+                        <p class="card-text">university</p>
+                        <p class="card-text">school name</p>
+                        <h5 class="card-title">Course Name</h5>
+                        <p class="card-text">degree</p>
+                        <p class="card-text">
+                          <a href="details.html">View details</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="bs-checkbox">
+                <input type="checkbox" />
+              </td>
+              <td>
+                <div class="card mb-3" style="max-width: 1000px">
+                  <div class="row g-0">
+                    <div class="col-md-2" style="width: 200px">
+                      <img
+                        src="images/blue-square-image-3.png"
+                        class="img-fluid rounded-start"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card-body">
+                        <p class="card-text">university</p>
+                        <p class="card-text">school name</p>
+                        <h5 class="card-title">Course Name</h5>
+                        <p class="card-text">degree</p>
+                        <p class="card-text">
+                          <a href="details.html">View details</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="bs-checkbox">
+                <input type="checkbox" />
+              </td>
+              <td>
+                <div class="card mb-3" style="max-width: 1000px">
+                  <div class="row g-0">
+                    <div class="col-md-2" style="width: 200px">
+                      <img
+                        src="images/blue-square-image-3.png"
+                        class="img-fluid rounded-start"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card-body">
+                        <p class="card-text">university</p>
+                        <p class="card-text">school name</p>
+                        <h5 class="card-title">Course Name</h5>
+                        <p class="card-text">degree</p>
+                        <p class="card-text">
+                          <a href="details.html">View details</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="bs-checkbox">
+                <input type="checkbox" />
+              </td>
+              <td>
+                <div class="card mb-3" style="max-width: 1000px">
+                  <div class="row g-0">
+                    <div class="col-md-2" style="width: 200px">
+                      <img
+                        src="images/blue-square-image-3.png"
+                        class="img-fluid rounded-start"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card-body">
+                        <p class="card-text">university</p>
+                        <p class="card-text">school name</p>
+                        <h5 class="card-title">Course Name</h5>
+                        <p class="card-text">degree</p>
+                        <p class="card-text">
+                          <a href="details.html">View details</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="bs-checkbox">
+                <input type="checkbox" />
+              </td>
+              <td>
+                <div class="card mb-3" style="max-width: 1000px">
+                  <div class="row g-0">
+                    <div class="col-md-2" style="width: 200px">
+                      <img
+                        src="images/blue-square-image-3.png"
+                        class="img-fluid rounded-start"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card-body">
+                        <p class="card-text">university</p>
+                        <p class="card-text">school name</p>
+                        <h5 class="card-title">Course Name</h5>
+                        <p class="card-text">degree</p>
+                        <p class="card-text">
+                          <a href="details.html">View details</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="bs-checkbox">
+                <input type="checkbox" />
+              </td>
+              <td>
+                <div class="card mb-3" style="max-width: 1000px">
+                  <div class="row g-0">
+                    <div class="col-md-2" style="width: 200px">
+                      <img
+                        src="images/blue-square-image-3.png"
+                        class="img-fluid rounded-start"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card-body">
+                        <p class="card-text">university</p>
+                        <p class="card-text">school name</p>
+                        <h5 class="card-title">Course Name</h5>
+                        <p class="card-text">degree</p>
+                        <p class="card-text">
+                          <a href="details.html">View details</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="bs-checkbox">
+                <input type="checkbox" />
+              </td>
+              <td>
+                <div class="card mb-3" style="max-width: 1000px">
+                  <div class="row g-0">
+                    <div class="col-md-2" style="width: 200px">
+                      <img
+                        src="images/blue-square-image-3.png"
+                        class="img-fluid rounded-start"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card-body">
+                        <p class="card-text">university</p>
+                        <p class="card-text">school name</p>
+                        <h5 class="card-title">Course Name</h5>
+                        <p class="card-text">degree</p>
+                        <p class="card-text">
+                          <a href="details.html">View details</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="bs-checkbox">
+                <input type="checkbox" />
+              </td>
+              <td>
+                <div class="card mb-3" style="max-width: 1000px">
+                  <div class="row g-0">
+                    <div class="col-md-2" style="width: 200px">
+                      <img
+                        src="images/blue-square-image-3.png"
+                        class="img-fluid rounded-start"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card-body">
+                        <p class="card-text">university</p>
+                        <p class="card-text">school name</p>
+                        <h5 class="card-title">Course Name</h5>
+                        <p class="card-text">degree</p>
+                        <p class="card-text">
+                          <a href="details.html">View details</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="bs-checkbox">
+                <input type="checkbox" />
+              </td>
+              <td>
+                <div class="card mb-3" style="max-width: 1000px">
+                  <div class="row g-0">
+                    <div class="col-md-2" style="width: 200px">
+                      <img
+                        src="images/blue-square-image-3.png"
+                        class="img-fluid rounded-start"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card-body">
+                        <p class="card-text">university</p>
+                        <p class="card-text">school name</p>
+                        <h5 class="card-title">Course Name</h5>
+                        <p class="card-text">degree</p>
+                        <p class="card-text">
+                          <a href="details.html">View details</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="bs-checkbox">
+                <input type="checkbox" />
+              </td>
+              <td>
+                <div class="card mb-3" style="max-width: 1000px">
+                  <div class="row g-0">
+                    <div class="col-md-2" style="width: 200px">
+                      <img
+                        src="images/blue-square-image-3.png"
+                        class="img-fluid rounded-start"
+                        alt="..."
+                      />
+                    </div>
+                    <div class="col-md-4">
+                      <div class="card-body">
+                        <p class="card-text">university</p>
+                        <p class="card-text">school name</p>
+                        <h5 class="card-title">Course Name</h5>
+                        <p class="card-text">degree</p>
+                        <p class="card-text">
+                          <a href="details.html">View details</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </table>    
+      
+          <nav aria-label="...">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link">Previous</a>
+              </li>
+              <li class="page-item active"><a class="page-link" href="#">1</a></li>
+              <li class="page-item" aria-current="page">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+
+          <script type="text/javascript">
+            function f() {
+                // var name = Student.name;
+                // var age = Student.age;
+                // var dept = Student.dept;
+                // var score = Student.score;
+      
+                // var str = "Name:" + name + "\nAge: "
+                //     + age + "\nDepartment:" + dept 
+                //     + "\nScore: " + score;
+      
+                // document.getElementById(
+                //     'text').innerHTML = str;
+                // console.log("hihi");
+                // let selectElement = document.querySelector('#select1');
+                // let output = selectElement.value;
+                // document.querySelector('.output').textContent = output;
+                // console.log(output);
+            }
+            
+            // find id and log value on console
+            $("#option1").click(function() {
+                var fired_button = $(this).val();
+                // alert(fired_button);
+                console.log(fired_button);
+            });
+
+            // find class and log value on local storage
+            let selector = document.querySelectorAll(".dropdown-item");
+
+            selector.forEach((btn) => {
+                btn.addEventListener("click", (event) => {
+                    let value = event.target.value; // value of button that was clicked
+                    localStorage.setItem("dropdown-item", value);
+                })
+            });
+        </script>
+    </body>
+
+    <footer>
+
+    </footer>
+    <script src="script.js"></script>
+</html>

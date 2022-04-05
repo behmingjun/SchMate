@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>course_catalogue</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <header>
+            <p class="center">
+                <nav id="header-nav" class="navbar navbar-expand-lg">
+                    <div class="container">
+                        <div class="navbar-header">
+                              <div class="container-fluid">
+                                <a class="navbar-brand">
+                                    <img src="images/logo_with_words.PNG" alt="" width="33" height="33" class="d-inline-block align-text-top">
+                                    <span>SchMate</span>
+                                </a>
+                              </div>
+        
+                               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsable-nav" aria-controls="collapsable-nav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span>More</span>
+                            </button>	
+                           </div>
+        
+                           <div id="collapsable-nav" class="collapse navbar-collapse">
+                               <ul id="nav-list" class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../welcome_page/index.html">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                      <a class="nav-link" href="../select_interests/index.html">Select Interests</a>
+                                </li>
+                                <li class="nav-item">
+                                      <a class="nav-link" href="../course_catalogue/course_catalogue.html">Course Catalogue</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../contact_page/index.html">Contact Team</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </p>
+        </header>
+
+        <div>
+            <p class="center">
+                <span class="alert alert-info" role="alert">
+                    <b>Filter:</b>
+                    <span class="dropdown">                
+                        <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            University
+                            </button>
+                            <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Nanyang Technological University</a>
+                            <a class="dropdown-item" href="#">National University of Singapore</a>
+                            <a class="dropdown-item" href="#">Singapore Management University</a>
+                            </span>
+                    </span>
+        
+                    <span class="dropdown">                
+                        <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Course
+                            </button>
+                            <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Business</a>
+                            <a class="dropdown-item" href="#">Computer Science</a>
+                            <a class="dropdown-item" href="#">Computer Engineering</a>
+                            <a class="dropdown-item" href="#">Sociology</a>
+                            </span>
+                    </span>
+        
+                    <span class="dropdown">                
+                        <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Degree
+                            </button>
+                            <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Bachelor's Degree</a>
+                            <a class="dropdown-item" href="#">Master's Degree</a>
+                            <a class="dropdown-item" href="#">PhD</a>
+                            </span>
+                    </span>
+        
+                    <button type="button" class="btn btn-dark btn-sm">Filter</button>
+                    <button type="button" class="btn btn-secondary btn-sm"><u><b>Clear All</b></u></button>
+                </span>
+
+                <span>&emsp;&emsp;&emsp;</span>
+
+                <span class="alert alert-info" role="alert">
+                    <b>Sort By</b>
+            
+                    <span class="dropdown">                
+                        <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Category
+                            </button>
+                            <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">School Fees</a>
+                            <a class="dropdown-item" href="#">Rank Points (A Levels)</a>
+                            <a class="dropdown-item" href="#">GPA (Polytechnic))</a>
+                            </span>
+                    </span>
+            
+                    <span class="dropdown">                
+                        <button class="btn btn-primary dropdown-toggle btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Order
+                            </button>
+                            <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Ascending</a>
+                            <a class="dropdown-item" href="#">Descending</a>
+                            </span>
+                    </span>
+                </span>
+            </p>
+        </div>
+        
+    </body>
+
+    <footer>
+
+    </footer>
+</html>
