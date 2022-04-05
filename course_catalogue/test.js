@@ -29,7 +29,7 @@ const data = fetch('../dummy.json')
     console.log(tempInterest);
     //for now give a random value for interest
     // tempInterest = "Business";
-    //if (data.length>5){len = 5};
+    // if (data.length>5){len = 5};
     len = data.length;
     console.log("Printing length of data");
     console.log(len); //output is 34 which is correct
@@ -38,8 +38,9 @@ const data = fetch('../dummy.json')
       let x=data[i].interest_card.split(',');
       // console.log(x);
       for (var j=0; j<x.length; j++){
+        if (x[j][0]===' '){x[j]=x[j].slice(1);}
       if (x[j] == tempInterest){ 
-        console.log(data[i]);
+        // console.log(data[i]);
         var hi = document.querySelector('.dynamic_cards').innerHTML;
       dynamic.innerHTML = hi + `<tr><td class="bs-checkbox">
       <input type="checkbox" class ="checkbox" value = '${data[i].id-1}'/>
@@ -71,37 +72,41 @@ const data = fetch('../dummy.json')
     interestedCourseList.push(data[i]); //insert at the end
       }
       }
-      if (tempInterest == []){
-        var hi = document.querySelector('.dynamic_cards').innerHTML;
-      dynamic.innerHTML = hi + `<tr><td class="bs-checkbox">
-      <input type="checkbox" class ="checkbox" value = '${data[i].id-1}'/>
-    </td>
-    
-    <td>
-      <div class="card mb-3" style="max-width: 1000px">
-        <div class="row g-0">
-          <div class="col-md-2" style="width: 200px">
-            <img
-              src="images/blue-square-image-3.png"
-              class="img-fluid rounded-start"
-              alt="..."
-            />
-          </div>
-          <div class="col-lg-8">
-            <div class="card-body">
-              <p class="card-text">${data[i].university}</p>
-              <p class="card-text">${data[i].school}</p>
-              <h5 class="card-title">${data[i].degree}</h5>
-              <p class="card-text">
-                <button class="details" value="${data[i].id-1}" onclick="window.location.href = '../course_details/coursedetailspage.html';">View details</button>
-              </p>
-            </div>
+    }
+    // console.log("TESTING");
+    // console.log(tempInterest);
+    if (tempInterest === 'null'){
+      console.log("Enter if tempinterest is not selected");
+      for (var i = 0; i < 5; i++) {
+      var hi = document.querySelector('.dynamic_cards').innerHTML;
+    dynamic.innerHTML = hi + `<tr><td class="bs-checkbox">
+    <input type="checkbox" class ="checkbox" value = '${data[i].id-1}'/>
+  </td>
+  
+  <td>
+    <div class="card mb-3" style="max-width: 1000px">
+      <div class="row g-0">
+        <div class="col-md-2" style="width: 200px">
+          <img
+            src="images/blue-square-image-3.png"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+        <div class="col-lg-8">
+          <div class="card-body">
+            <p class="card-text">${data[i].university}</p>
+            <p class="card-text">${data[i].school}</p>
+            <h5 class="card-title">${data[i].degree}</h5>
+            <p class="card-text">
+              <button class="details" value="${data[i].id-1}" onclick="window.location.href = '../course_details/coursedetailspage.html';">View details</button>
+            </p>
           </div>
         </div>
       </div>
-    </td></tr>`;
-      }
-    }
+    </div>
+  </td></tr>`;
+    }}
     //debugPrintTesting(interestedCourseList);
     //debugPrint(data);
 
