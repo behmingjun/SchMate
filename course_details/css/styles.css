@@ -2,6 +2,11 @@
 	font-family: 'Nunito', sans-serif;
 }
 
+body {
+	color: #333;
+	background-color: #fafafa;
+}
+
 /* Nav-bar*/
 
 .navbar a {

@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <!-- Custom CSS and font -->
+	<!-- Custom CSS and font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<title>Compare Courses</title>
 </head>
@@ -23,124 +26,115 @@
 		<nav id="header-nav" class="navbar navbar-expand-lg">
 			<div class="container">
 				<div class="navbar-header">
-          			<div class="container-fluid">
+					<div class="container-fluid">
 						<a class="navbar-brand">
-						    <img src="images/logo2.PNG" alt="" width="33" height="33" class="d-inline-block align-text-top">
-						    <span>SchMate</span>
+							<img src="../logo/logo_with_words.PNG" alt="logo" width="33" height="33"
+								class="d-inline-block align-text-top" />
+							<span>SchMate</span>
 						</a>
-  					</div>
+					</div>
 
-           			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsable-nav" aria-controls="collapsable-nav" aria-expanded="false" aria-label="Toggle navigation">
-            			<span>More</span>
-        			</button>	
-           		</div>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsable-nav"
+						aria-controls="collapsable-nav" aria-expanded="false" aria-label="Toggle navigation">
+						<span>More</span>
+					</button>
+				</div>
 
-           		<div id="collapsable-nav" class="collapse navbar-collapse">
-		           	<ul id="nav-list" class="navbar-nav">
-		            	<li class="nav-item">
-			            	<a class="nav-link" href="../welcome_page/index.html">Home</a>
-			        	</li>
-		            	<li class="nav-item">
-		              		<a class="nav-link" href="../select_interests/index.html">Select Interests</a>
-			        	</li>
-			        	<li class="nav-item">
-			          		<a class="nav-link" href="../course_catalogue/course_catalogue.html">Course Catalogue</a>
-			            </li>
-			            <li class="nav-item">
-			            	<a class="nav-link" href="../contact_page/index.html">Contact Team</a>
-			            </li>
-			        </ul>
-			    </div>
+				<div id="collapsable-nav" class="collapse navbar-collapse">
+					<ul id="nav-list" class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="../index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../select_interests/index.html">Select Interests</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../course_catalogue/course_catalogue.html">Course Catalogue</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="../contact_page/index.html">Contact Team</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</nav>
 	</header>
 
 	<!-- Content -->
 	<div id="main-content" class="container">
-		<h1>Compare courses</h1>
-		<div class="row">
-			<div class="col-lg-6 school-info">
-				<p>University 1</p>
-				<p>School name 1</p>
-				<h3>Course name 1</h3>
-				<img src="https://www.ntu.edu.sg/images/librariesprovider118/ug-programmes-detail/singledegree_cs_775x465b5d2185e-4804-4142-a461-dc87d829455f.jpg?sfvrsn=91314e93_3" class="img-fluid" alt="Computer Science">
-			</div>
-			<div class="col-lg-6 school-info">
-				<p>University 2</p>
-				<p>School name 2</p>
-				<h3>Course name 2</h3>
-				<img src="https://external-preview.redd.it/JAcA2z8B_TOQHpyM2oeGFmF2waQFLWWPf6J04ymD8hc.jpg?auto=webp&s=aac652104a0233d4b7756879b79edd80fe15baa0" class="img-fluid" alt="DSAI">
-			</div>
-		</div>
+		<table class="table table-borderless table-hover">
+			<thead>
+				<h1>Compare Courses</h1>
+			</thead>
+			<tbody id="school-info"></tbody>
+		</table>
 
-		<h2>Summary</h2>
-		<div class="row">
-			<div class="col-lg-6">
-				<p>QS world ranking</p>
-				<p>Shortest course duration</p>
-				<p>Longest course duration</p>
-			</div>
-			<div class="col-lg-6">
-				<p>QS world ranking</p>
-				<p>Shortest course duration</p>
-				<p>Longest course duration</p>
-			</div>
-		</div>
+		<table class="table table-borderless table-hover">
+			<thead>
+				<h2>Duration</h2>
+			</thead>
+			<tbody id="course-duration"></tbody>
+		</table>
 
-		<h2>Annual school fees</h2>
-		<div class="row">
-			<div class="col-lg-6 col-md-6">
-				<p>Tuition grant available to all students</p>
-				<p>$8000 (Singaporean)</p>
-				<p>$11,000 (Permenant resident)</p>
-				<p>$16,000 (International students)</p>
-			</div>
-			<div class="col-lg-6">
-				<p>Tuition grant available to all students</p>
-				<p>$8500 (Singaporean)</p>
-				<p>$12,000 (Permenant resident)</p>
-				<p>$17,500 (International students)</p>
-			</div>
-		</div>
+		<table class="table table-borderless table-hover">
+			<thead>
+				<h2>Annual school fees (tuition grant)</h2>
+			</thead>
+			<tbody id="school-fees-grant"></tbody>
+		</table>
 
-		<h2>Available financial aid</h2>
-		<div class="row">
-			<div class="col-lg-6 col-md-6">
-				<p>Nanyang Scholarship</p>
-				<p>CN Yang Scholarship</p>
-			</div>
-			<div class="col-lg-6">
-				<p>Nanyang Scholarship</p>
-				<p>CNY Yang Scholarship</p>
-				<p>School Scholarship</p>
-			</div>
-		</div>
+		<table class="table table-borderless table-hover">
+			<thead>
+				<h2>Annual school fees (no tuition grant)</h2>
+			</thead>
+			<tbody id="school-fees"></tbody>
+		</table>
 
-		<h2>Starting salary</h2>
-		<div class="row">
-			<div class="col-lg-6 col-md-6">
-				<p>Mean: $4500</p>
-				<p>Median: $4225</p>
-			</div>
-			<div class="col-lg-6">
-				<p>Mean: $4800</p>
-				<p>Median: $4680</p>
-			</div>
-		</div>
+		<table class="table table-borderless table-hover">
+			<thead>
+				<h2>Entrance requirements</h2>
+			</thead>
+			<tbody id="entry-score"></tbody>
+		</table>
+
+		<table class="table table-borderless table-hover">
+			<thead>
+				<h2>Employment rate</h2>
+			</thead>
+			<tbody id="employment"></tbody>
+		</table>
+
+		<table class="table table-borderless table-hover">
+			<thead>
+				<h2>Starting salary</h2>
+			</thead>
+			<tbody id="starting-pay"></tbody>
+		</table>
 	</div>
+
 	<div class="col-lg-12 text-center">
-		<a href="#" class="btn btn-labeled btn-primary btn-lg" role="button" aria-pressed="false">
+		<a href="../course_catalogue/course_catalogue.html" class="btn btn-labeled btn-primary btn-lg" role="button"
+			aria-pressed="false">
 			<span class="btn-label"> <i class="fa fa-angle-left"></i></span>
 			Compare more courses
 		</a>
 	</div>
 
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
 	<script src="js/script.js"></script>
 </body>
 
-<footer></footer>
+<footer>
+	<p>&copy BlackCat 2022</p>
+</footer>
+
 </html>
