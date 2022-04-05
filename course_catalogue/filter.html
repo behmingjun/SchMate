@@ -83,6 +83,9 @@
         "Nanyang Technological University": "university",
         "National University of Singapore": "university",
         "Singapore Management University": "university",
+        "8590": "rank_points_alevels",
+        "7585": "rank_points_alevels",
+        "6575": "rank_points_alevels",
         // need to add for other filters as well
       };
       let courseProperty = coursePropertyDict[filterOption];
@@ -90,10 +93,23 @@
 
       // filter out the courses that match the filterOption
       let filteredCourses = [];
-      for (let i = 0; i < interestedCoursesList.length; i++) {
-        if (interestedCoursesList[i][courseProperty] === filterOption) {
-          // console.log(interestedCourses[i]);
-          filteredCourses.push(interestedCoursesList[i]);
+      if (courseProperty === "university"){
+          for (let i = 0; i < interestedCoursesList.length; i++) {
+          if (interestedCoursesList[i][courseProperty] === filterOption) {
+            // console.log(interestedCourses[i]);
+            filteredCourses.push(interestedCoursesList[i]);
+          }
+        }
+      }
+      else if (courseProperty === "rank_points_alevels"){
+        lowerValue = parseInt(filterOption.slice(0,2));
+        upperValue = parseInt(filterOption.slice(2));
+        for (let i = 0; i < interestedCoursesList.length; i++) {
+          let courseRankPoint = interestedCoursesList[i][courseProperty];
+          if (courseRankPoint >= lowerValue && courseRankPoint <= upperValue) {
+            // console.log(interestedCourses[i]);
+            filteredCourses.push(interestedCoursesList[i]);
+          }
         }
       }
       console.log(filteredCourses);
@@ -218,12 +234,12 @@
               aria-haspopup="true"
               aria-expanded="false"
             >
-              Degree
+              Rank Point (A Levels)
             </button>
             <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Bachelor's Degree</a>
-              <a class="dropdown-item" href="#">Master's Degree</a>
-              <a class="dropdown-item" href="#">PhD</a>
+              <button value="8590" class="filterOption dropdown-item" href="#">>=85</button>
+              <button value="7585" class="filterOption dropdown-item" href="#">75 <= RP <= 85</button>
+              <button value="6575" class="filterOption dropdown-item" href="#">65 <= RP <= 75</button>
             </span>
           </span>
 
