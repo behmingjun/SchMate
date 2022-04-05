@@ -1,12 +1,13 @@
 * {
-    font-family: 'Nunito', sans-serif;
-    color: black;
-    /* outline: 2px solid yellow; */
+	font-family: 'Nunito', sans-serif;
 }
 
-header{
-    color: black;
+body {
+	color: #333;
+	background-color: #fafafa;
 }
+
+/* Nav bar */
 
 .navbar a {
 	color: #333;
@@ -15,6 +16,7 @@ header{
 .nav-item {
 	width: 150px;
 	text-align: center;
+	text-decoration: none;
 }
 
 .nav-item:hover, .nav-item:focus {
@@ -22,10 +24,10 @@ header{
 	font-size: 15px;
 	background-color: #444;
 	text-decoration: none;
-	border-radius:  5px;
+	border-radius: 5px;
 }
 
-.nav-link:hover, .nav-link:focus{
+.nav-link:hover, .nav-link:focus {
 	color: #f3f3f3;
 }
 

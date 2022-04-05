@@ -2,23 +2,12 @@
 	font-family: 'Nunito', sans-serif;
 }
 
-.bold-blue {
-  font-weight: bold;
-  color: #0277bd;
+body {
+	color: #333;
+	background-color: #fafafa;
 }
 
-.smallwords {
-  font-size: 10px;
-}
-
-.center {
-  padding-top: 1%;
-  text-align: center;
-}
-
-header {
-	color: black;
-}
+/* Nav bar */
 
 .navbar a {
 	color: #333;
@@ -40,6 +29,26 @@ header {
 
 .nav-link:hover, .nav-link:focus {
 	color: #f3f3f3;
+}
+
+#header-nav {
+	padding: 8px 16px;
+}
+
+/* Content */
+
+.bold-blue {
+  font-weight: bold;
+  color: #0277bd;
+}
+
+.smallwords {
+  font-size: 10px;
+}
+
+.center {
+  padding-top: 1%;
+  text-align: center;
 }
 
 .alert-info {

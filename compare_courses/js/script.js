@@ -1,5 +1,41 @@
-// Parses information from course object to relevant HTML elements
-const createUni = (course) => {
+// General function to populate table
+const createTable = (tableName, tableLength, type, data, colSize) => {
+    for (i = 0; i < tableLength; i++){
+        const tableRow = document.createElement('tr');
+        for (j = 0; j < colSize; j++){
+            // Create cells
+            const cell = document.createElement('td');
+            if (colSize == 2) {
+                cell.classList.add("col-lg-6", "col-md-6", "col-sm-6");
+            }
+            else if (colSize == 3) {
+                cell.classList.add("col-lg-4", "col-md-4", "col-sm-4");
+            }
+        
+            // Get attributes depending on row number
+            const newElement = document.createElement(type[i]);
+            switch(type[i]) {
+                case 'p':
+                case 'h3':
+                    newElement.innerText = data[j * (data.length / 2) + i];
+                    break;
+                case 'img':
+                    newElement.src = "https://www.ntu.edu.sg/images/librariesprovider118/ug-programmes-detail/singledegree_cs_775x465b5d2185e-4804-4142-a461-dc87d829455f.jpg?sfvrsn=91314e93_3";
+                    newElement.classList.add("img-fluid");
+                    break;
+                default:
+                    console.log("Error");
+            }
+            cell.append(newElement);                
+            tableRow.append(cell);
+        }
+        tableName.appendChild(tableRow);
+    }
+}
+
+
+// Calls createTable() to dynamically populate tables with relevant attributes
+const populateUni = (course) => {
     // Parse school info and image
     // TODO: add image source into data.push()
     let tableName = document.getElementById("school-info");
@@ -65,8 +101,8 @@ const createUni = (course) => {
     dataType = Array(2).fill('p');
     data.length = 0;
     for (i = 0; i < course.length; i++) {
-        data.push(course[i].employment_rate_ft_perm + " (Full time, permenant)",
-            course[i].employment_rate_overall + " (Overall)");
+        data.push(course[i].employment_rate_ft_perm + "% (Full time, permenant)",
+            course[i].employment_rate_overall + "% (Overall)");
     }
     createTable(tableName, tableLength, dataType, data, course.length);
 
@@ -88,44 +124,15 @@ const createUni = (course) => {
 }
 
 
-// General function to populate table
-const createTable = (tableName, tableLength, type, data, colSize) => {
-    for (i = 0; i < tableLength; i++){
-        const tableRow = document.createElement('tr');
-        for (j = 0; j < colSize; j++){
-            // Create cells
-            const cell = document.createElement('td');
-            if (colSize == 2) {
-                cell.classList.add("col-lg-6", "col-md-6", "col-sm-6");
-            }
-            else if (colSize == 3) {
-                cell.classList.add("col-lg-4", "col-md-4", "col-sm-4");
-            }
-        
-            // Get attributes depending on row number
-            const newElement = document.createElement(type[i]);
-            switch(type[i]) {
-                case 'p':
-                case 'h3':
-                    newElement.innerText = data[j * (data.length / 2) + i];
-                    break;
-                case 'img':
-                    newElement.src = "https://www.ntu.edu.sg/images/librariesprovider118/ug-programmes-detail/singledegree_cs_775x465b5d2185e-4804-4142-a461-dc87d829455f.jpg?sfvrsn=91314e93_3";
-                    newElement.classList.add("img-fluid");
-                    break;
-                default:
-                    console.log("Error");
-            }
-            cell.append(newElement);                
-            tableRow.append(cell);
-        }
-        tableName.appendChild(tableRow);
-    }
+// Main function to call all necessary functions
+const main = () => {
+    // Get uni objects from local storage
+    uniArray = JSON.parse(localStorage.getItem("Course Comparison"));
+    
+    // Call createUni()
+    populateUni(uniArray);
 }
 
 
-// Get uni objects from local storage
-uniArray = JSON.parse(localStorage.getItem("Course Comparison"));
-
-// Call createUni()
-createUni(uniArray);
+// Call main()
+main();
