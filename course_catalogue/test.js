@@ -32,10 +32,14 @@ const data = fetch('../dummy.json')
     //if (data.length>5){len = 5};
     len = data.length;
     for (var i = 0; i < len; i++) { //note that the length here is 5, can be changed to length of obj
-      if (data[i].interest_card == tempInterest){ 
+      let x=data[i].interest_card.split(',');
+      // console.log(x);
+      for (var j=0; j<x.length; j++){
+      if (x[j] == tempInterest){ 
+        console.log(data[i]);
         var hi = document.querySelector('.dynamic_cards').innerHTML;
       dynamic.innerHTML = hi + `<tr><td class="bs-checkbox">
-      <input type="checkbox" class ="checkbox" value = '${i}'/>
+      <input type="checkbox" class ="checkbox" value = '${data[i].id-1}'/>
     </td>
     
     <td>
@@ -54,7 +58,7 @@ const data = fetch('../dummy.json')
               <p class="card-text">${data[i].school}</p>
               <h5 class="card-title">${data[i].degree}</h5>
               <p class="card-text">
-                <button class="details" value="${i}" onclick="window.location.href = '../course_details/coursedetailspage.html';">View details</button>
+                <button class="details" value="${data[i].id-1}" onclick="window.location.href = '../course_details/coursedetailspage.html';">View details</button>
               </p>
             </div>
           </div>
@@ -66,7 +70,7 @@ const data = fetch('../dummy.json')
       else if (tempInterest == null){
         var hi = document.querySelector('.dynamic_cards').innerHTML;
       dynamic.innerHTML = hi + `<tr><td class="bs-checkbox">
-      <input type="checkbox" class ="checkbox" value = '${i}'/>
+      <input type="checkbox" class ="checkbox" value = '${data[i].id-1}'/>
     </td>
     
     <td>
@@ -85,7 +89,7 @@ const data = fetch('../dummy.json')
               <p class="card-text">${data[i].school}</p>
               <h5 class="card-title">${data[i].degree}</h5>
               <p class="card-text">
-                <button class="details" value="${i}" onclick="window.location.href = '../course_details/coursedetailspage.html';">View details</button>
+                <button class="details" value="${data[i].id-1}" onclick="window.location.href = '../course_details/coursedetailspage.html';">View details</button>
               </p>
             </div>
           </div>
@@ -94,7 +98,7 @@ const data = fetch('../dummy.json')
     </td></tr>`;
       }
       fullCourseList.push(data[i]);
-    }
+    }}
     //debugPrintTesting(interestedCourseList);
     //debugPrint(data);
 
