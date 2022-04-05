@@ -41,62 +41,62 @@
   </head>
 
   <body>
-      <!-- javascript -->
-      <script type="text/javascript">
-        // function f() {
-            // var name = Student.name;
-            // var age = Student.age;
-            // var dept = Student.dept;
-            // var score = Student.score;
+    <!-- javascript -->
+    <script type="text/javascript">
+      // function f() {
+      // var name = Student.name;
+      // var age = Student.age;
+      // var dept = Student.dept;
+      // var score = Student.score;
 
-            // var str = "Name:" + name + "\nAge: "
-            //     + age + "\nDepartment:" + dept 
-            //     + "\nScore: " + score;
+      // var str = "Name:" + name + "\nAge: "
+      //     + age + "\nDepartment:" + dept
+      //     + "\nScore: " + score;
 
-            // document.getElementById(
-            //     'text').innerHTML = str;
-            // console.log("hihi");
-            // let selectElement = document.querySelector('#select1');
-            // let output = selectElement.value;
-            // document.querySelector('.output').textContent = output;
-            // console.log(output);
-        // }
-        
-        // find id and log value on console
-        // $("#option1").click(function() {
-        //     var fired_button = $(this).val();
-        //     // alert(fired_button);
-        //     console.log(fired_button);
-        // });
-        
-        // get the value from local storage
-        let filterOption = localStorage.getItem("filterOption");
-        console.log(filterOption);
+      // document.getElementById(
+      //     'text').innerHTML = str;
+      // console.log("hihi");
+      // let selectElement = document.querySelector('#select1');
+      // let output = selectElement.value;
+      // document.querySelector('.output').textContent = output;
+      // console.log(output);
+      // }
 
-        // get the list of interested courses, parse them from string into list of object
-        let interestedCoursesStr = localStorage.getItem("Interested Courses");
-        let interestedCoursesList = JSON.parse(interestedCoursesStr);
-        // console.log(interestedCourses);
+      // find id and log value on console
+      // $("#option1").click(function() {
+      //     var fired_button = $(this).val();
+      //     // alert(fired_button);
+      //     console.log(fired_button);
+      // });
 
-        // dictionary to match the filterOption to the respective course property
-        let coursePropertyDict = {
-          "Nanyang Technological University": "university",
-          "National University of Singapore": "university",
-          "Singapore Management University": "university",
-          // need to add for other filters as well 
-        };
-        let courseProperty = coursePropertyDict[filterOption];
-        // console.log(courseProperty);
+      // get the value from local storage
+      let filterOption = localStorage.getItem("filterOption");
+      console.log(filterOption);
 
-        // filter out the courses that match the filterOption
-        let filteredCourses = []
-        for (let i = 0; i < interestedCoursesList.length; i++){
-          if (interestedCoursesList[i][courseProperty] === filterOption){
-            // console.log(interestedCourses[i]);
-            filteredCourses.push(interestedCoursesList[i]);
-          }
+      // get the list of interested courses, parse them from string into list of object
+      let interestedCoursesStr = localStorage.getItem("Interested Courses");
+      let interestedCoursesList = JSON.parse(interestedCoursesStr);
+      // console.log(interestedCourses);
+
+      // dictionary to match the filterOption to the respective course property
+      let coursePropertyDict = {
+        "Nanyang Technological University": "university",
+        "National University of Singapore": "university",
+        "Singapore Management University": "university",
+        // need to add for other filters as well
+      };
+      let courseProperty = coursePropertyDict[filterOption];
+      // console.log(courseProperty);
+
+      // filter out the courses that match the filterOption
+      let filteredCourses = [];
+      for (let i = 0; i < interestedCoursesList.length; i++) {
+        if (interestedCoursesList[i][courseProperty] === filterOption) {
+          // console.log(interestedCourses[i]);
+          filteredCourses.push(interestedCoursesList[i]);
         }
-        console.log(filteredCourses);
+      }
+      console.log(filteredCourses);
     </script>
 
     <!--Navigation Bar-->
@@ -174,10 +174,38 @@
             >
               University
             </button>
-            <span id='select1' class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <button id="option1" onclick=f() value="Nanyang Technological University" class="filterOption dropdown-item" href="#">Nanyang Technological University</button>
-              <button id="option2" onclick=f() value="National University of Singapore" class="filterOption dropdown-item" href="#">National University of Singapore</button>
-              <button id="option3" onclick=f() value="Singapore Management University" class="filterOption dropdown-item" href="#">Singapore Management University</button>
+            <span
+              id="select1"
+              class="dropdown-menu"
+              aria-labelledby="dropdownMenuButton"
+            >
+              <button
+                id="option1"
+                onclick="f()"
+                value="Nanyang Technological University"
+                class="filterOption dropdown-item"
+                href="#"
+              >
+                Nanyang Technological University
+              </button>
+              <button
+                id="option2"
+                onclick="f()"
+                value="National University of Singapore"
+                class="filterOption dropdown-item"
+                href="#"
+              >
+                National University of Singapore
+              </button>
+              <button
+                id="option3"
+                onclick="f()"
+                value="Singapore Management University"
+                class="filterOption dropdown-item"
+                href="#"
+              >
+                Singapore Management University
+              </button>
             </span>
           </span>
 
@@ -288,11 +316,11 @@
       let selector = document.querySelectorAll(".filterOption");
 
       selector.forEach((btn) => {
-          btn.addEventListener("click", (event) => {
-              let value = event.target.value; // value of button that was clicked
-              localStorage.setItem("filterOption", value);
-              location.assign('filter.html');
-          })
+        btn.addEventListener("click", (event) => {
+          let value = event.target.value; // value of button that was clicked
+          localStorage.setItem("filterOption", value);
+          location.assign("filter.html");
+        });
       });
     </script>
   </body>
@@ -301,11 +329,15 @@
   <!--script src="script.js"></script-->
   <!-- <script src="test.js"></script> -->
   <script>
-    var dynamic = document.querySelector('.dynamic_cards');
-    for (var i=0;i<filteredCourses.length;i++){
-          var hi = document.querySelector('.dynamic_cards').innerHTML;
-      dynamic.innerHTML = hi + `<tr><td class="bs-checkbox">
-      <input type="checkbox" class ="checkbox" value = '${i}'/>
+    var dynamic = document.querySelector(".dynamic_cards");
+    for (var i = 0; i < filteredCourses.length; i++) {
+      var hi = document.querySelector(".dynamic_cards").innerHTML;
+      dynamic.innerHTML =
+        hi +
+        `<tr><td class="bs-checkbox">
+      <input type="checkbox" class ="checkbox" value = '${
+        filteredCourses[i].id - 1
+      }'/>
     </td>
     
     <td>
@@ -324,24 +356,80 @@
               <p class="card-text">${filteredCourses[i].school}</p>
               <h5 class="card-title">${filteredCourses[i].degree}</h5>
               <p class="card-text">
-                <button class="details" value="${i}" >View details</button>
+                <button class="details" value="${
+                  filteredCourses[i].id - 1
+                }" >View details</button> 
               </p>
             </div>
           </div>
         </div>
       </div>
     </td></tr>`;
-        }
-        function addDetailsLogic(fullCourseList){
-  var details = document.querySelectorAll(".details");
-  for (var detail of details){
-    console.log(fullCourseList[JSON.parse(detail.value)]);
-    detail.addEventListener('click', function(){
-      localStorage.setItem("Course Details", JSON.stringify(fullCourseList[JSON.parse(this.value)])); //must use this.value inside here
-    })
-    console.log("hi");
-  }
-}
-addDetailsLogic();
+    }
+    function addDetailsLogic(fullCourseList) {
+      var details = document.querySelectorAll(".details");
+      //console.log(details.length);
+      for (var detail of details) {
+        console.log(fullCourseList[JSON.parse(detail.value)]);
+        detail.addEventListener("click", function () {
+          localStorage.setItem(
+            "Course Details",
+            JSON.stringify(fullCourseList[JSON.parse(this.value)])
+          ); //must use this.value inside here
+        });
+        //console.log("hi");
+      }
+    }
+
+    function addCompareCoursesChecker() {
+      let comparebtn = document.getElementById("compare-btn");
+
+      let checkboxes = document.querySelectorAll(".bs-checkbox");
+
+      checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("click", (event) => {
+          if (
+            document.querySelectorAll('input[type="checkbox"]:checked')
+              .length === 2
+          ) {
+            comparebtn.style.pointerEvents = "all";
+          } else {
+            comparebtn.style.pointerEvents = "none";
+          }
+        });
+      });
+    }
+
+    function addCourseSelectionCounter() {
+      var courseCheckboxes = document.querySelectorAll(".checkbox");
+      var courseCheckboxID =
+        JSON.parse(localStorage.getItem("Course Checkbox")) || [];
+      //console.log(courseCheckboxes.length);
+      for (var checkbox of courseCheckboxes) {
+        checkbox.addEventListener("click", function () {
+          if (this.checked == true) {
+            courseCheckboxID.push(this.value);
+            console.log(courseCheckboxID);
+            localStorage.setItem(
+              "Course Checkbox",
+              JSON.stringify(courseCheckboxID)
+            );
+          } else {
+            courseCheckboxID = courseCheckboxID.filter((e) => e != this.value);
+            console.log(courseCheckboxID);
+            localStorage.setItem(
+              "Course Checkbox",
+              JSON.stringify(courseCheckboxID)
+            );
+          }
+        });
+      }
+    }
+
+    addCompareCoursesChecker();
+    addCourseSelectionCounter();
+    // grab the complete Course list
+    fullCourseList = JSON.parse(localStorage.getItem("Complete Courses List"));
+    addDetailsLogic(fullCourseList);
   </script>
 </html>
