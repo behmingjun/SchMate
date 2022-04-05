@@ -31,7 +31,10 @@ const data = fetch('../dummy.json')
     // tempInterest = "Business";
     //if (data.length>5){len = 5};
     len = data.length;
-    for (var i = 0; i < len; i++) { //note that the length here is 5, can be changed to length of obj
+    console.log("Printing length of data");
+    console.log(len); //output is 34 which is correct
+    for (var i = 0; i < len; i++) {
+      fullCourseList.push(data[i]);
       let x=data[i].interest_card.split(',');
       // console.log(x);
       for (var j=0; j<x.length; j++){
@@ -67,7 +70,8 @@ const data = fetch('../dummy.json')
     </td></tr>`;
     interestedCourseList.push(data[i]); //insert at the end
       }
-      else if (tempInterest == null){
+      }
+      if (tempInterest == []){
         var hi = document.querySelector('.dynamic_cards').innerHTML;
       dynamic.innerHTML = hi + `<tr><td class="bs-checkbox">
       <input type="checkbox" class ="checkbox" value = '${data[i].id-1}'/>
@@ -97,8 +101,7 @@ const data = fetch('../dummy.json')
       </div>
     </td></tr>`;
       }
-      fullCourseList.push(data[i]);
-    }}
+    }
     //debugPrintTesting(interestedCourseList);
     //debugPrint(data);
 
@@ -113,6 +116,8 @@ const data = fetch('../dummy.json')
 
 
     //console.log(fullCourseList[16]);
+    console.log("Print Course List Length");
+    console.log(fullCourseList.length);
     addDetailsLogic(fullCourseList);
 
     //console.log("seeing if sequential")
