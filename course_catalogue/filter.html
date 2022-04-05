@@ -83,10 +83,19 @@
         "Nanyang Technological University": "university",
         "National University of Singapore": "university",
         "Singapore Management University": "university",
-        8590: "rank_points_alevels",
-        7585: "rank_points_alevels",
-        6575: "rank_points_alevels",
-        0065: "rank_points_alevels",
+        "8591": "rank_points_alevels",
+        "7585": "rank_points_alevels",
+        "6575": "rank_points_alevels",
+        "0065": "rank_points_alevels",
+        "3.94.0": "poly_gpa",
+        "3.83.9": "poly_gpa",
+        "3.73.8": "poly_gpa",
+        "3.63.7": "poly_gpa",
+        "3.53.6": "poly_gpa",
+        "3.43.5": "poly_gpa",
+        "3.33.4": "poly_gpa",
+        "3.23.3": "poly_gpa",
+        "0.03.2": "poly_gpa",
         // need to add for other filters as well
       };
       let courseProperty = coursePropertyDict[filterOption];
@@ -106,7 +115,7 @@
         upperValue = parseInt(filterOption.slice(2));
         for (let i = 0; i < interestedCoursesList.length; i++) {
           let courseRankPoint = interestedCoursesList[i][courseProperty];
-          if (courseRankPoint >= lowerValue && courseRankPoint <= upperValue) {
+          if (courseRankPoint >= lowerValue && courseRankPoint < upperValue) {
             // console.log(interestedCourses[i]);
             filteredCourses.push(interestedCoursesList[i]);
           }
@@ -247,7 +256,7 @@
                 65 - 75
               </button>
               <button value="0065" class="filterOption dropdown-item" href="#">
-                <= 65
+                < 65
               </button>
             </span>
           </span>
