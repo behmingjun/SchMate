@@ -119,3 +119,7 @@ footer > p {
 	box-shadow: none !important;
 	border: none;
 } */
+.footer-text {
+	padding: 0%;
+	text-align: center;
+}
