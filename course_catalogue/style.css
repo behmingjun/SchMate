@@ -128,3 +128,7 @@ body {
 .fa-angle-right {
 	padding-left: 10px;
 }
+.footer-text {
+	padding: 0%;
+	text-align: center;
+}

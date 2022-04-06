@@ -45,9 +45,6 @@ body {
 /* .container {
     background-color: grey;
 } */
-footer{
-    background-color: grey;
-}
 
 .button {
     background-color: black;
@@ -83,4 +80,8 @@ footer{
     /* color: aqua; */
     position: relative;
     top: -5px;
+}
+.footer-text {
+	padding: 0%;
+	text-align: center;
 }
