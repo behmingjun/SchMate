@@ -70,8 +70,12 @@
       // });
 
       // get the value from local storage
+      localStorage.setItem("Course Checkbox", null); //reset course checkbox
+      localStorage.setItem("Course Details", null); //reset course details
       let filterOption = localStorage.getItem("filterOption");
       console.log(filterOption);
+
+      //reload current page
 
       // get the list of interested courses, parse them from string into list of object
       let interestedCoursesStr = localStorage.getItem("Interested Courses");
@@ -83,9 +87,9 @@
         "Nanyang Technological University": "university",
         "National University of Singapore": "university",
         "Singapore Management University": "university",
-        "8591": "rank_points_alevels",
-        "7585": "rank_points_alevels",
-        "6575": "rank_points_alevels",
+        8591: "rank_points_alevels",
+        7585: "rank_points_alevels",
+        6575: "rank_points_alevels",
         "0065": "rank_points_alevels",
         "3.94.0": "poly_gpa",
         "3.83.9": "poly_gpa",
@@ -283,31 +287,67 @@
               GPA (Polytechnic)
             </button>
             <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <button value="3.94.0" class="filterOption dropdown-item" href="#">
+              <button
+                value="3.94.0"
+                class="filterOption dropdown-item"
+                href="#"
+              >
                 >= 3.9
               </button>
-              <button value="3.83.9" class="filterOption dropdown-item" href="#">
+              <button
+                value="3.83.9"
+                class="filterOption dropdown-item"
+                href="#"
+              >
                 3.8 - 3.9
               </button>
-              <button value="3.73.8" class="filterOption dropdown-item" href="#">
+              <button
+                value="3.73.8"
+                class="filterOption dropdown-item"
+                href="#"
+              >
                 3.7 - 3.8
               </button>
-              <button value="3.63.7" class="filterOption dropdown-item" href="#">
+              <button
+                value="3.63.7"
+                class="filterOption dropdown-item"
+                href="#"
+              >
                 3.6 - 3.7
               </button>
-              <button value="3.53.6" class="filterOption dropdown-item" href="#">
+              <button
+                value="3.53.6"
+                class="filterOption dropdown-item"
+                href="#"
+              >
                 3.5 - 3.6
               </button>
-              <button value="3.43.5" class="filterOption dropdown-item" href="#">
+              <button
+                value="3.43.5"
+                class="filterOption dropdown-item"
+                href="#"
+              >
                 3.4 - 3.5
               </button>
-              <button value="3.33.4" class="filterOption dropdown-item" href="#">
+              <button
+                value="3.33.4"
+                class="filterOption dropdown-item"
+                href="#"
+              >
                 3.3 - 3.4
               </button>
-              <button value="3.23.3" class="filterOption dropdown-item" href="#">
+              <button
+                value="3.23.3"
+                class="filterOption dropdown-item"
+                href="#"
+              >
                 3.2 - 3.3
               </button>
-              <button value="0.03.2" class="filterOption dropdown-item" href="#">
+              <button
+                value="0.03.2"
+                class="filterOption dropdown-item"
+                href="#"
+              >
                 < 3.2
               </button>
             </span>
@@ -391,6 +431,7 @@
         class="btn btn-labeled btn-primary btn-lg"
         role="button"
         aria-pressed="false"
+        onclick="addCoursesCompare()"
       >
         Compare courses
         <span class="btn-label"> <i class="fa fa-angle-right"></i></span>
@@ -487,6 +528,18 @@
       });
     }
 
+    function resetCheckbox() {
+      //reset checkbox upon arriving at the page
+      var courseCheckboxes = document.querySelectorAll(".checkbox");
+      //console.log(courseCheckboxes.length);
+      for (var checkbox of courseCheckboxes) {
+        if (checkbox.checked == true) {
+          console.log(checkbox);
+          checkbox.checked = false;
+        }
+      }
+    }
+
     function addCourseSelectionCounter() {
       var courseCheckboxes = document.querySelectorAll(".checkbox");
       var courseCheckboxID =
@@ -511,6 +564,26 @@
           }
         });
       }
+    }
+
+    function addCoursesCompare() {
+      localStorage.setItem("Course Comparison", null);
+      var courseIds = JSON.parse(localStorage.getItem("Course Checkbox"));
+      var completeCourseList = JSON.parse(
+        localStorage.getItem("Complete Courses List")
+      );
+      var x = JSON.parse(localStorage.getItem("Course Comparison")) || [];
+      for (var j = 0, k = courseIds.length; j < k; j++) {
+        for (var i = 0, l = completeCourseList.length; i < l; i++) {
+          if (completeCourseList[i]["id"] - 1 == courseIds[j]) {
+            x.push(completeCourseList[i]);
+          }
+        }
+      }
+      // location.assign('../compare_courses/index.html');
+      localStorage.setItem("Course Comparison", JSON.stringify(x));
+      resetCheckbox();
+      location.assign("../compare_courses/index.html");
     }
 
     addCompareCoursesChecker();
