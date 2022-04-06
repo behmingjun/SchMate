@@ -76,9 +76,9 @@ const data = fetch('../dummy.json')
     }
     // console.log("TESTING");
     // console.log(tempInterest);
-    if (tempInterest === 'null'){
+    if (tempInterest === 'null' || tempInterest===''){
       console.log("Enter if tempinterest is not selected");
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < len; i++) {
       var hi = document.querySelector('.dynamic_cards').innerHTML;
     dynamic.innerHTML = hi + `<tr><td class="bs-checkbox">
     <input type="checkbox" class ="checkbox" value = '${data[i].id-1}'/>
@@ -107,6 +107,7 @@ const data = fetch('../dummy.json')
       </div>
     </div>
   </td></tr>`;
+  interestedCourseList.push(data[i]); //insert at the end
     }}
     //debugPrintTesting(interestedCourseList);
     //debugPrint(data);
