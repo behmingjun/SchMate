@@ -150,7 +150,9 @@ h4 {
 
 /* Footer text */
 
-.footer-text {
-	padding: 0%;
+footer p {
 	text-align: center;
+	background-color: #f3f3f3;
+	margin: 0px;
+	padding: 1% 0px;
 }
