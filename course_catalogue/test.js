@@ -191,6 +191,7 @@ async function addCompareCoursesChecker(){
       checkbox.addEventListener("click", (event) => {
           if (document.querySelectorAll('input[type="checkbox"]:checked').length === 2) {
         comparebtn.style.pointerEvents = "all";
+        comparebtn.style.opacity = "1";
       }
       else {
         comparebtn.style.pointerEvents = "none";

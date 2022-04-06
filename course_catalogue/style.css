@@ -110,6 +110,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	pointer-events: none;
+	opacity: 0.5;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
