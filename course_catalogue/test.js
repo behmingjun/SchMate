@@ -17,7 +17,7 @@ var test;
 var interest = localStorage.getItem("Category");
 
 localStorage.setItem("Course Checkbox", null);
-localStorage.setItem("Course Details", null);
+// localStorage.setItem("Course Details", null);
 
 const data = fetch('../dummy.json')
   .then(response => response.json())
