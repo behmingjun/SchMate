@@ -52,7 +52,7 @@ const data = fetch('../dummy.json')
         <div class="row g-0">
           <div class="col-md-2" style="width: 200px">
             <img
-              src="images/${data[i].university}.jpeg"
+              src="./images/${data[i].university}.jpeg"
               class="img-fluid rounded-start"
               alt="..."
             />
@@ -89,7 +89,7 @@ const data = fetch('../dummy.json')
       <div class="row g-0">
         <div class="col-md-2" style="width: 200px">
           <img
-            src="images/blue-square-image-3.png"
+            src="./images/${data[i].university}.jpeg"
             class="img-fluid rounded-start"
             alt="..."
           />
