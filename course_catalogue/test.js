@@ -154,7 +154,20 @@ function addCoursesCompare(){
   }
   // location.assign('../compare_courses/index.html');
   localStorage.setItem("Course Comparison",JSON.stringify(x));
+  resetCheckbox(); // reset selection
   location.assign('../compare_courses/index.html');
+}
+
+function resetCheckbox() {
+  //reset checkbox upon arriving at the page
+  var courseCheckboxes = document.querySelectorAll(".checkbox");
+  //console.log(courseCheckboxes.length);
+  for (var checkbox of courseCheckboxes) {
+    if (checkbox.checked == true) {
+      console.log(checkbox);
+      checkbox.checked = false;
+    }
+  }
 }
 
 async function addDetailsLogic(fullCourseList){
