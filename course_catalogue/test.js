@@ -195,6 +195,7 @@ async function addCompareCoursesChecker(){
       }
       else {
         comparebtn.style.pointerEvents = "none";
+        comparebtn.style.opacity = "0.5";
       }
       })
   });
