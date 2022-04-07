@@ -39,8 +39,13 @@ body {
     padding: 0px;
     margin: 0px;
     height: 100%;  
-    background: radial-gradient(rgba(243, 243, 243, 0.01), rgba(243, 243, 243, 0.7)), url('./images/welcome_background.jpg');
-    background-size: cover;
+    background: radial-gradient(rgba(242, 242, 242, 0.01), rgba(243, 243, 243, 0.7)), url('https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?cs=srgb&dl=pexels-pixabay-267885.jpg&fm=jpg');
+    background-size: 100% 100%;
+}
+#text{
+	color: whitesmoke;
+	font-size: larger;
+	font-weight: bolder;
 }
 
 .container h1{
