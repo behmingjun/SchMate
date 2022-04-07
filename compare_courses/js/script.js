@@ -17,10 +17,10 @@ const createTable = (tableName, tableLength, type, data, colSize) => {
 			switch (type[i]) {
 				case 'p':
 				case 'h3':
-					newElement.innerText = data[j * (data.length / 2) + i];
+					newElement.innerText = data[j * (data.length / colSize) + i];
 					break;
 				case 'img':
-					newElement.src = data[j * (data.length / 2) + i];
+					newElement.src = data[j * (data.length / colSize) + i];
 					newElement.classList.add("img-fluid");
 					break;
 				default:
@@ -37,7 +37,6 @@ const createTable = (tableName, tableLength, type, data, colSize) => {
 // Calls createTable() to dynamically populate tables with relevant attributes
 const populateUni = (course) => {
 	// Parse school info and image
-	// TODO: add image source into data.push()
 	let tableName = document.getElementById("school-info");
 	let tableLength = 4;
 	let dataType = ['p', 'p', 'h3', 'img'];
@@ -154,9 +153,9 @@ const populateUni = (course) => {
 	tableName = document.getElementById("entry-score");
 	data.length = 0;
 	for (i = 0; i < course.length; i++) {
-		data.push(course[i].poly_gpa + " (Polytechnique GPA)",
-			course[i].rank_points_alevels + " (A Levels rank points)",
-			course[i]["3H2_1H1"] + " (A Levels grades for 3H2/1H1)");
+		data.push("Polytechnique GPA: " + course[i].poly_gpa,
+			"A Levels rank points: " + course[i].rank_points_alevels,
+			"A Levels grades for 3H2/1H1: " + course[i]["3H2_1H1"]);
 	}
 	createTable(tableName, tableLength, dataType, data, course.length);
 
