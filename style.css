@@ -40,16 +40,24 @@ body {
     margin: 0px;
     height: 100%;  
     background: radial-gradient(rgba(242, 242, 242, 0.01), rgba(243, 243, 243, 0.7)), url('https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?cs=srgb&dl=pexels-pixabay-267885.jpg&fm=jpg');
-    background-size: 100% 100%;
+    background-position: center;
+	background-size: cover;
 }
+
 #text{
-	color: whitesmoke;
+	color: #f3f3f3;
 	font-size: larger;
 	font-weight: bolder;
 }
 
 .container h1{
-    padding-top: 230px;
+    padding-top: 15%;
+	font-size: 300%;
+	font-weight: bold;
+}
+
+.container p {
+	font-size: 120%;
 }
 
 .fa-angle-right {
@@ -61,6 +69,7 @@ body {
     background-color: #1a1a1a;
     border: none;
     margin: 40px auto 70px;
+	padding: 2% 3%;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
@@ -72,7 +81,8 @@ body {
 }
 
 .projects-section-header {
-    padding-top: 50px;
+    padding-top: 5%;
+	padding-bottom: 3%;
 }
 
 .team-member-image {
@@ -93,7 +103,6 @@ body {
 }
 
 .code{
-    /* color: #45567d; */
     transition: color 0.3s ease-out;
 }
 
